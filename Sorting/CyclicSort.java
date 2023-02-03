@@ -3,24 +3,29 @@ import java.util.Arrays;
 public class CyclicSort {
 
   public static void main(String[] args) {
-    int[] arr = {5,3,2,4,1};
+    int[] arr = {4,3,0,2,1};
     cyclicSort(arr);
     System.out.println(Arrays.toString(arr));
   }
-
-/* if there is a condition that, we have to sort 1 to n numbers,
-then we can apply cyclic sort. Specialty of cyclic sort is that,
-here number n lies at index (n-1) */
-
+  
   static void cyclicSort(int[] arr){
-    for(int i=0; i<arr.length; i++){
-      int correct = arr[i]-1;
-      if(i!=correct){
-        int temp = arr[i];
-        arr[i] = arr[correct];
-        arr[correct] = temp;
+    int i=0;
+    while(i<arr.length){
+      int correct = arr[i];
+      if(arr[i]<arr.length && arr[i]!=arr[correct]){
+        swap(arr, i, correct);
+      }
+      //43021-13024-31024-21034-01234
+      else{
+        i++;
       }
     }
   }
-
+  
+  static void swap(int[] arr, int start, int end){
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+  }
 }
+ 
