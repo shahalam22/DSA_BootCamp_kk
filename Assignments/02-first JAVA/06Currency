@@ -1,0 +1,15 @@
+//Input currency in rupees and output in USD.
+
+import java.util.Scanner;
+
+public class Rupee2USD {
+
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Enter amount in Rupee : ");
+    float r = input.nextFloat();
+    float d = r*0.012f;
+    System.out.printf("You'r amount in USD is : %.2f", d);
+  }
+
+}
