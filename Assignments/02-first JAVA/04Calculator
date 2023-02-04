@@ -1,0 +1,46 @@
+//Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)
+
+import java.util.Scanner;
+
+public class Calculate {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int a, b;
+    char ch, chp='a';    
+    while(chp!='q'){    
+      System.out.print("Enter a number: ");
+      a = input.nextInt();
+      System.out.print("Enter another number: ");
+      b = input.nextInt();
+      System.out.print("Enter an operator : ");
+      ch = input.next().trim().charAt(0);
+    
+      if(ch=='+'){
+        System.out.print("Summation is " + (a+b));
+      }
+      else if(ch=='-'){
+        System.out.print("Subtraction is " + (a-b));
+      }
+      else if(ch=='*'){
+        System.out.print("Multiplication is " + (a*b));
+      }
+      else if(ch=='/'){
+        if(b==0){
+          System.out.print("Division is not possible.");
+        }
+        else{
+          System.out.printf("Division is %.2f", ((float)a/b));
+        }
+      }
+      else if(ch=='%'){
+        System.out.print("Remainder is " + (a%b));
+      }
+      else{
+        System.out.print("Enter a valid operator.");
+      }
+      System.out.println();
+      System.out.println("Enter q to quit or press anykey to continue.");
+      chp = input.next().trim().charAt(0);    
+    }
+  }
+}
