@@ -16,7 +16,7 @@ public class FirstMisingPositivInt {
         return i+1;
       }
     }
-    return arr.length;
+    return arr.length+1;
   }
   
   static void cyclicSort(int[] arr){
