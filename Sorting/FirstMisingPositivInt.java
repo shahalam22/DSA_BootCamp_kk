@@ -1,11 +1,7 @@
-import java.util.Arrays;
-
-//Finding missing number in 0-n numbers of array
-
-public class MissingNumber {
+public class FirstMisingPositivInt {
 
   public static void main(String[] args) {
-    int[] arr = {2,0,1};
+    int[] arr = {2,3,4,1,-1,-2};
     System.out.println(MissingNumber(arr));
   }
   
@@ -14,18 +10,18 @@ public class MissingNumber {
     cyclicSort(arr);
     
     for(int i=0; i<arr.length; i++){
-      if(i!=arr[i]){
-        return i;
+      if(arr[i]!=i+1){
+        return i+1;
       }
     }
-    return arr.length;
+    return arr.length+1;
   }
   
   static void cyclicSort(int[] arr){
     int i=0;
     while(i<arr.length){
-      int correct = arr[i];
-      if(arr[i]<arr.length && arr[i]!=arr[correct]){
+      int correct = arr[i]-1;
+      if(arr[i]>0 && arr[i]<arr.length && arr[i]!=arr[correct]){
         swap(arr, i, correct);
       }
       //43021-13024-31024-21034-01234
