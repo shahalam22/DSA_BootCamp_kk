@@ -1,10 +1,9 @@
-package Assignment2;
 
 //Parameter of a circle
 
 import java.util.Scanner;
 
-public class ParaOfCircle {
+public class PeriOfCircle {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);

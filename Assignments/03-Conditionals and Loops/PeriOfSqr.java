@@ -4,7 +4,7 @@ package Assignment2;
 
 import java.util.Scanner;
 
-public class ParaOfSqr {
+public class PeriOfSqr {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);

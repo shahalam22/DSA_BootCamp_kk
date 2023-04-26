@@ -4,7 +4,7 @@ package Assignment2;
 
 import java.util.Scanner;
 
-public class ParaOfRect {
+public class PeriOfRect {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);

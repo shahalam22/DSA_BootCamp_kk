@@ -4,7 +4,7 @@ package Assignment2;
 
 import java.util.Scanner;
 
-public class ParaOfEquilateral {
+public class PeriOfEquilateral {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
