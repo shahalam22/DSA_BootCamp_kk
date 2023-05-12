@@ -8,7 +8,8 @@ import java.util.List;
 //for a value of n element has a subset of 2^n element;
 public class subSeq {
     public static void main(String[] args) {
-        System.out.println(subseqRet("", "abc"));
+        //System.out.println(subseq("", "abc"));
+        subseq("", "abc");
 
 //        int[] arr = {1,2,3};
 //        List<List<Integer>> list = ssUsingIteration(arr);

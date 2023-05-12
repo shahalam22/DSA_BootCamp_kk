@@ -1,39 +1,47 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 //https://www.geeksforgeeks.org/check-for-balanced-parenthesis-without-using-stack/
 
-//IT'S INCOMPLETE
 public class balancedParenthesis {
-    public static void main(String[] args) {
 
-    }
-    public static boolean check(String str, int i){
-        if(str.length()==0) return true;
-        if(str.length()%2==1) return false;
-        if(str.charAt(0)==')' || str.charAt(0) =='}' || str.charAt(0)==']') return false;
-        if(str.charAt(0)=='(' || str.charAt(0)=='{' || str.charAt(0)=='['){
-            char closing = reeturnClosing(str.charAt(0));
-
-            int j=0, count =0;
-            for( j=1; j<str.length(); j++){
-                if(str.charAt(j)==str.charAt(0)){
-                    count++;
-                }
-                if(str.charAt(j)==closing){
-                    if(count==0) break;
-                    count--;
-                }
-            }
-            if(j==str.length()) return false;
-
+    public static boolean balancedParenthesis(String str){
+        ArrayList<Character> list = new ArrayList<>();
+        for(int i=0; i<str.length(); i++){
+            list.add(str.charAt(i));
         }
-        return false;
+        return check(list, 0);
     }
 
-    static char reeturnClosing(char ch){
-        if (ch=='(') return ')';
-        if (ch=='{') return '}';
-        if (ch=='[') return ']';
-        return Character.MIN_VALUE;
+    public static boolean check(ArrayList<Character> str, int i){
+        if(str.size()==0) return true;
+        if(str.size()%2 == 1){
+            return false;
+        }
+        if(str.get(i)=='[' || str.get(i)=='{' || str.get(i) == '('){
+            return check(str, i + 1);
+        }
+        else if(str.get(i)==']' && str.get(i-1)=='['){
+            str.remove(i);
+            str.remove(i-1);
+            return check(str, i - 1);
+        }
+        else if(str.get(i)=='}' && str.get(i-1)=='{'){
+            str.remove(i);
+            str.remove(i-1);
+            return check(str, i - 1);
+        }
+        else if(str.get(i)==')' && str.get(i-1)=='('){
+            str.remove(i);
+            str.remove(i-1);
+            return check(str, i - 1);
+        }
+        else return false;
     }
+
+    public static void main(String[] args) {
+        String str = "[()]{}{[()()]()}";
+
+        System.out.println(balancedParenthesis(str));
+    }
+
 }
